@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Game | Brick Breaker</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <style>
+    @font-face {
+      font-family: "Glitch";
+      src: url("../../assets/CFGlitch.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    }
+    body {
+      font-family: "Glitch";
+      background: url(https://static.vecteezy.com/system/resources/previews/000/095/572/non_2x/vector-dark-wallpaper-design.jpg)
+        no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      align-items: stretch;
+      color: #ebefff;
+    }
+    .game {
+      flex-grow: 0.98;
+      max-height: 100%;
+      margin: 20px;
+      /* background: grey; */
+    }
+    .options {
+      flex-grow: 0.02;
+      margin: 20px;
+      /* background: grey; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pause img {
+      height: 30px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .pause img:hover {
+      opacity: 0.6;
+      transform:scale(1.1);
+    }
+    .options {
+      font-size: 24px;
+    }
+    .game {
+      display: flex;
+      align-items: center;
+    }
+    canvas {
+      vertical-align: top;
+      box-shadow: inset 0px 0px 10px #0d52db;
+      /* filter: drop-shadow(0px 0px 10px #0d52db); */
+      border-radius: 20px;
+      background: none;
+    }
+    .lives {
+      margin-left: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.7fr 1.6fr 0.7fr;
+      gap: 0px 0px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "result_title result_title result_title"
+        "show_score show_score show_score"
+        "menu menu menu";
+        width: 40%;
+      height: 80%;
+min-width:300px;
+      background: #000000;
+      box-shadow: 0px 4px 100px rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .result_title {
+      grid-area: result_title;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+    }
+
+    .show_score {
+      grid-area: show_score;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .final_score {
+      font-size: 54px;
+    }
+
+    .menu {
+      grid-area: menu;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    section {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      display: none;
+      opacity: 0;
+      transition: 0.6s ease;
+    }
+    .menu_icon {
+      height:40px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .menu_icon:hover {
+      opacity: 0.7;
+      transform:scale(1.1);
+    }
+    /* .pause{
+      visibility: hidden;
+    } */
+  </style>
+  <body>
+    <div class="game" id="game">
+      <canvas id="myCanvas"></canvas>
+    </div>
+    <div class="options">
+      <!-- <div class="options_cont"> -->
+        <span class="score">SCORE <span id="score">0</span></span
+        ><span class="lives">LIVES <span id="lives">3</span></span>
+      <!-- </div> -->
+      <div class="pause"><img src="../../assets/pause.png" alt="" /></div>
+    </div>
+
+    <section class="showResult">
+      <div class="container">
+        <div class="result_title">LOST</div>
+        <div class="show_score"><span>YOUR SCORE</span>
+        <span class="final_score">YOUR SCORE</span></div>
+        <div class="menu">
+<a href="../../level.html"><img src="../../assets/level.png" alt="" class="menu_icon "></a>
+<img src="../../assets/retry.png" alt="" class="menu_icon retry">
+<img src="../../assets/next.png" alt="" class="menu_icon next">
+        </div>
+      </div>
+    </section>
+    <script src="game.js"></script>
+  </body>
+</html>
