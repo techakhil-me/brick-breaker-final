@@ -346,6 +346,9 @@ function showResult(win=false){
   }
   else if (win){
     document.querySelector(".result_title").innerHTML="WIN"
+    document.querySelector(".next").onclick = ()=>{
+      window.location.href = "../lvl6/game.html";
+    }
   }
   else{
     document.querySelector(".result_title").innerHTML="LOST"
