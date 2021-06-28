@@ -1,2 +1,10 @@
 # brick-breaker-final
-Created with CodeSandbox
+
+live: https://undefined-brickbreaker.netlify.app/
+
+## Challenge: reach lvl 6
+
+
+
+
+
